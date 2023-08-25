@@ -16,7 +16,11 @@
 
 <body>
 
-    @yield('main')
+    @include('includes.header')
+
+    <main class="container">
+        @yield('main')
+    </main>
 
     @yield('scripts')
 </body>

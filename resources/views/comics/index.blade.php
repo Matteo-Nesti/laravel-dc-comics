@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-
 @section('main')
-    <h1>home</h1>
+    <h1>comics</h1>
+    <a href=""></a>
 @endsection
