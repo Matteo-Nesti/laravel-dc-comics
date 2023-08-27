@@ -2,7 +2,7 @@
 
 @section('main')
     <h1 class="text-center mb-5">~ Tutti i Comics ~</h1>
-    <a href="{{ route('comics.create') }}"></a>
+    <a href="{{ route('comics.create') }}" class="btn btn-primary mb-5">Crea un nuovo Fumetto</a>
     {{-- card --}}
     <div class="row justify-content-between g-5 text-center">
         @forelse ($comics as  $comic)
