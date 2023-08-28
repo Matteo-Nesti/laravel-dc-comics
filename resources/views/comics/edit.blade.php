@@ -2,9 +2,10 @@
 
 
 @section('main')
-    <form action="{{ route('comics.update', ['id' => $comic->id]) }}" method="POST">
+    <form action="{{ route('comics.update', $comic->id) }}" method="POST">
         @csrf
         @method('PUT')
+
         <div class="row">
 
             <div class="mb-3 col-6">

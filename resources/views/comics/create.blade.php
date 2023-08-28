@@ -2,7 +2,7 @@
 
 
 @section('main')
-    <form action="{{ route('comics.store') }}" method="POST">
+    <form action="{{ route('comics.store', $comic->id) }}" method="POST">
         @csrf
         <div class="row">
 
