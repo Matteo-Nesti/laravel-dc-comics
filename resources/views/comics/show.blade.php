@@ -52,4 +52,7 @@
     <a href="{{ route('comics.index') }}" class="btn btn-secondary my-3">
         torna ai comics
     </a>
+    <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-primary my-3">
+        modifica
+    </a>
 @endsection
