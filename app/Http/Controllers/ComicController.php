@@ -94,7 +94,7 @@ class ComicController extends Controller
                 'series.string' => 'il campo inserito non e` corretto',
                 'type.string' => 'il campo inserito non e` corretto',
                 'sale_date.string' => 'il campo inserito non e` corretto',
-                'artists.required' => 'il campo degli artisti e` obbligatorio',
+                'artists.required' => 'il campo degli scrittori e` obbligatorio',
                 'artists.string' => 'il campo inserito non e` corretto',
                 'writers.required' => 'il campo degli artisti e` obbligatorio',
                 'writers.string' => 'il campo inserito non e` corretto',
