@@ -70,18 +70,42 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        $request->validate([
-            'title' => 'required|string',
-            'thumb' => 'nullable|string',
-            'price' => 'required|string',
-            'series' => 'required|string',
-            'type' => 'required|string',
-            'sale_date' => 'nullable|string',
-            'artists' => 'required|string',
-            'writers' => 'required|string',
-            'description' => 'required|string',
+        $request->validate(
+            [
+                'title' => 'required|string',
+                'thumb' => 'nullable|string|url:http,https',
+                'price' => 'required|string',
+                'series' => 'required|string',
+                'type' => 'nullable|string',
+                'sale_date' => 'nullable|string',
+                'artists' => 'required|string',
+                'writers' => 'required|string',
+                'description' => 'required|string',
 
-        ]);
+            ],
+            // errori
+            [
+                'title.required' => 'il campo del titolo e` obbligatorio',
+                'title.string' => 'il campo inserito non e` corretto',
+                'thumb.url' => 'inserire un URL valido',
+                'thumb.string' => 'il campo inserito non e` corretto',
+                'price.string' => 'il campo inserito non e` corretto',
+                'series.required' => 'il campo della serie e` obbligatorio',
+                'series.string' => 'il campo inserito non e` corretto',
+                'type.string' => 'il campo inserito non e` corretto',
+                'sale_date.string' => 'il campo inserito non e` corretto',
+                'artists.required' => 'il campo degli artisti e` obbligatorio',
+                'artists.string' => 'il campo inserito non e` corretto',
+                'writers.required' => 'il campo degli artisti e` obbligatorio',
+                'writers.string' => 'il campo inserito non e` corretto',
+                'description.required' => 'il campo della descrizione e` obbligatorio',
+                'description.string' => 'il campo inserito non e` corretto',
+            ]
+        );
+
+
+
+
         $data = $request->all();
 
 
