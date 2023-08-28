@@ -70,7 +70,7 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        $data = $request->all;
+        $data = $request->all();
 
         $comic->update($data);
 
