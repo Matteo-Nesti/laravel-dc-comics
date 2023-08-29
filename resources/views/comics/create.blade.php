@@ -2,7 +2,7 @@
 
 
 @section('main')
-    <form action="{{ route('comics.store', $comic->id) }}" method="POST">
+    <form action="{{ route('comics.store') }}" method="POST">
         @csrf
         <div class="row">
 
@@ -13,10 +13,13 @@
 
             <div class="mb-3 col-6">
                 <label for="thumb" class="form-label">Copertina</label>
-                <input type="text" class="form-control" id="thumb" name="thumb" placeholder="URL immagine">
+                <div class="d-flex justify-content-center align-items-start">
+                    <input type="text" class="form-control @error('thumb') is-invalid @enderror" id="thumb"
+                        name="thumb" value="">
+                    <img src="https://marcolanci.it/utils/placeholder.jpg" alt="" id="thumb-img"
+                        class="img-fluid w-25">
+                </div>
             </div>
-
-
 
 
 
@@ -64,4 +67,6 @@
             <a href="{{ route('comics.index') }}" class="btn btn-secondary">torna indietro</a>
         </div>
     </form>
+
+    @vite('resources/js/thumb-preview.js')
 @endsection

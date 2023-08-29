@@ -24,10 +24,13 @@
                     value="{{ $comic->title }}">
             </div>
 
-            <div class="mb-3 col-6">
+            <div class="mb-3 col-6 ">
                 <label for="thumb" class="form-label">Copertina</label>
-                <input type="text" class="form-control @error('thumb') is-invalid @enderror" id="thumb"
-                    name="thumb" value="{{ $comic->thumb }}">
+                <div class="d-flex justify-content-center align-items-start">
+                    <input type="text" class="form-control @error('thumb') is-invalid @enderror" id="thumb"
+                        name="thumb" value="{{ $comic->thumb }}">
+                    <img src="{{ $comic->thumb }}" alt="" id="thumb-img" class="img-fluid w-25">
+                </div>
             </div>
 
             <div class="mb-3 col-3">
@@ -81,4 +84,6 @@
             <button type="reset" class="btn btn-danger ">Svuota</button>
             <a href="{{ route('comics.index') }}" class="btn btn-secondary">torna indietro</a>
         </div>
+
+        @vite('resources/js/thumb-preview.js')
     @endsection
