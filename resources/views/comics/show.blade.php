@@ -55,7 +55,7 @@
     <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-primary my-3">
         modifica
     </a>
-    <form action="{{ route('comics.destroy', $comic->id) }}">
+    <form action="{{ route('comics.destroy', $comic->id) }} " id="delete-button" method="POST">
         @csrf
         @method('DELETE')
 
@@ -63,4 +63,16 @@
             Elimina
         </button>
     </form>
+
+
+    {{-- script per far devidere all'utente se eliminare o meno il comic --}}
+    <script>
+        const btn = document.getElementById('delete-button')
+
+        btn.addEventListener('submit', (event) => {
+            event.preventDefault();
+            let hasConfirmed = confirm('vuoi eliminare davvero questo fumetto?')
+            if (hasConfirmed) btn.submit()
+        })
+    </script>
 @endsection
